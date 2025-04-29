@@ -1,11 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
-  Tabletop.init({
-    key: '1DXSsg9cRiNvmbC9QBSU4aGEPj4BQrtXU6lFKr1wtYdc',
-    callback: function (data, tabletop) {
-      mostrarFicha(data[0]); // Lee solo la primera fila
-    },
-    simpleSheet: true
-  });
+  const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPBjarbjJkPXg0xh3sMKzleZAhohscGE5MOPo2CnwQUzArIBVZo8aWccs9yPLKIFKg_MXBNeVh21Tx/pubhtml?gid=0&single=true";
+
+  fetch(url)
+    .then(res => res.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      const tablaHTML = doc.querySelector('table');
+      const fila = tablaHTML.querySelectorAll('tr')[1]; // Segunda fila: la de datos
+      const celdas = fila.querySelectorAll('td');
+
+      const equipo = {
+        'NOMBRE DEL EQUIPO': celdas[0].innerText.trim(),
+        'CATEGORIA': celdas[1].innerText.trim(),
+        'MARCA': celdas[2].innerText.trim(),
+        'MODELO': celdas[3].innerText.trim(),
+        'NUMERO DE SERIE': celdas[4].innerText.trim(),
+        'UBICACIÓN ACTUAL': celdas[5].innerText.trim(),
+        'FECHA DE ADQUISICIÓN': celdas[6].innerText.trim()
+      };
+
+      mostrarFicha(equipo);
+    })
+    .catch(err => {
+      console.error('Error al procesar el HTML de Google Sheets:', err);
+    });
 });
 
 function mostrarFicha(equipo) {
