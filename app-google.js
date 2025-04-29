@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const doc = parser.parseFromString(html, 'text/html');
 
       const tablaHTML = doc.querySelector('table');
-      const fila = tablaHTML.querySelectorAll('tr')[1]; // Segunda fila: la de datos
+      const fila = tablaHTML.querySelectorAll('tr')[2]; // Tercera fila = datos reales
       const celdas = fila.querySelectorAll('td');
 
       const equipo = {
