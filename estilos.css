@@ -16,26 +16,28 @@ body {
 
 .encabezado {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 10px 0;
   border-bottom: 4px solid #4CAF50;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
 }
 
 .encabezado h1 {
   font-size: 1.4rem;
   color: #2E7D32;
   text-align: center;
-  flex: 1;
   margin: 0 10px;
+  flex: 1;
   font-weight: 800;
+  word-break: break-word;
 }
 
 .logo {
   height: 60px;
   width: auto;
 }
+
 
 .info-empresa {
   display: flex;
@@ -80,16 +82,18 @@ body {
 }
 
 @media (max-width: 600px) {
-  .info-empresa {
-    flex-direction: column;
-    align-items: flex-start;
-  }
   .encabezado {
     flex-direction: column;
-    text-align: center;
+    gap: 10px;
   }
+
   .encabezado h1 {
     font-size: 1.2rem;
-    margin: 10px 0;
+    order: 2;
+  }
+
+  .logo {
+    height: 50px;
+    order: 1;
   }
 }
