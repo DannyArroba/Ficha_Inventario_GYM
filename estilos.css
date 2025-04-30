@@ -82,6 +82,7 @@ body {
 }
 
 @media (max-width: 600px) {
+ 
   .encabezado {
     flex-direction: column;
     gap: 10px;
