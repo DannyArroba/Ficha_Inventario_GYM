@@ -20,13 +20,13 @@ body {
   justify-content: space-between;
   flex-wrap: nowrap;
   padding: 10px 0;
-  border-bottom: 4px solid #4CAF50;
+  border-bottom: 4px solid #C8FF00;
 
 }
 
 .encabezado h1 {
   font-size: 1.4rem;
-  color: #C8FF00;
+  color: #4CAF50;
   text-align: center;
   margin: 0 10px;
   flex: 1;
