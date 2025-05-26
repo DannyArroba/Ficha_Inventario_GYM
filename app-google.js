@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPBjarbjJkPXg0xh3sMKzleZAhohscGE5MOPo2CnwQUzArIBVZo8aWccs9yPLKIFKg_MXBNeVh21Tx/pubhtml?gid=0&single=true";
+  const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQMu0g74F_M54o8Vdh6zkiVfO5zApbJpDCy88v2ntYBrhI4e1CboFexLRixkBTnbglfHle_k5LfehwW/pubhtml?gid=0&single=true";
 
   fetch(url)
     .then(res => res.text())
