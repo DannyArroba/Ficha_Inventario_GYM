@@ -91,7 +91,7 @@ body {
 
  .encabezado h1 {
   font-size: 1.4rem;
-  color: #C8FF00; /* ← cambiado */
+  /*color: #C8FF00; /* ← cambiado */
   text-align: center;
   margin: 0 10px;
   flex: 1;
