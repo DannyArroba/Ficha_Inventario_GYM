@@ -81,6 +81,16 @@ body {
 .tabla td {
   background-color: #F9FBE7;
 }
+.propiedad {
+  background-color: #C8FF00;
+  color: #000; /* texto negro */
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
 
 @media (max-width: 600px) {
  

@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let i = 2; i < filas.length; i++) {
         const celdas = filas[i].querySelectorAll('td');
 
-        if (celdas.length >= 7 && celdas[0].innerText.trim() === idBuscado) {
+        // Asegúrate de que hay al menos 9 columnas (índice 0 al 8)
+        if (celdas.length >= 9 && celdas[0].innerText.trim() === idBuscado) {
           const equipo = {
             'NOMBRE DEL EQUIPO': celdas[1].innerText.trim(),
             'CATEGORIA': celdas[2].innerText.trim(),
@@ -32,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
             'MODELO': celdas[4].innerText.trim(),
             'NUMERO DE SERIE': celdas[5].innerText.trim(),
             'UBICACIÓN ACTUAL': celdas[6].innerText.trim(),
-            'FECHA DE ADQUISICIÓN': celdas[7].innerText.trim()
+            'FECHA DE ADQUISICIÓN': celdas[7].innerText.trim(),
+            'FECHA ÚLTIMO MANTENIMIENTO': celdas[8]?.innerText.trim() || 'No registrada'
           };
 
           mostrarFicha(equipo);
@@ -61,6 +63,7 @@ function mostrarFicha(equipo) {
   agregarFila(tabla, 'NUMERO DE SERIE', equipo['NUMERO DE SERIE']);
   agregarFila(tabla, 'UBICACIÓN ACTUAL', equipo['UBICACIÓN ACTUAL']);
   agregarFila(tabla, 'FECHA DE ADQUISICIÓN', equipo['FECHA DE ADQUISICIÓN']);
+  agregarFila(tabla, 'FECHA ÚLTIMO MANTENIMIENTO', equipo['FECHA ÚLTIMO MANTENIMIENTO']);
 
   // Actualiza también la ubicación en la parte superior de la ficha
   const ubicacionSpan = document.getElementById('ubicacion-dinamica');
