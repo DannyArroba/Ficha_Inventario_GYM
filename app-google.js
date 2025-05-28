@@ -61,6 +61,12 @@ function mostrarFicha(equipo) {
   agregarFila(tabla, 'NUMERO DE SERIE', equipo['NUMERO DE SERIE']);
   agregarFila(tabla, 'UBICACIÓN ACTUAL', equipo['UBICACIÓN ACTUAL']);
   agregarFila(tabla, 'FECHA DE ADQUISICIÓN', equipo['FECHA DE ADQUISICIÓN']);
+
+  // Actualiza también la ubicación en la parte superior de la ficha
+  const ubicacionSpan = document.getElementById('ubicacion-dinamica');
+  if (ubicacionSpan) {
+    ubicacionSpan.textContent = equipo['UBICACIÓN ACTUAL'];
+  }
 }
 
 function agregarFila(tabla, campo, valor) {
